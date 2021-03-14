@@ -1,20 +1,3 @@
-.app-header{
-    background-color: #263238;
-    width: 100%;
-    height: 50px;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-}
-
-.logo{
-    color: #fff;
-    font-size: 18px;
-    padding: 10px;
-    font-family:Courier New;
-}
-
 .red{
     font-weight: bold;
     color: red;
