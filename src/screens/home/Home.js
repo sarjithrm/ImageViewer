@@ -225,10 +225,10 @@ class Home extends Component{
                                     </video>
                                }
                                <hr/>
-                               <Typography color="textPrimary" variant="headline" component="h4">
+                               <Typography color="textPrimary" variant="h6">
                                     {post.caption.text}
                                 </Typography>
-                                <Typography color="primary" variant="subtitle" component="p">
+                                <Typography color="primary" variant="subtitle1">
                                     {post.tags}
                                 </Typography>
                                 <br/>
@@ -243,13 +243,13 @@ class Home extends Component{
                                 <span>{post.likes.count} likes</span>
                                 <br/>
                                 {post.comments.map((comment) => (
-                                    <Typography color="textSecondary" variant="subtitle" component="p" key={post.id + "   " + comment} >
+                                    <Typography color="textSecondary" variant="subtitle1" key={post.id + "   " + comment} >
                                         <span><b>{post.username}:</b> {comment}</span>
                                     </Typography>
                                 ))}
                                 <br/>
                                 <div className={classes.comment}>
-                                    <FormControl fullWidth className={classes.formControl}>
+                                    <FormControl fullWidth={true} className={classes.formControl}>
                                         <InputLabel htmlFor="comment"> Add a comment </InputLabel>
                                         <Input id="comment" type="text" value={post.currentComment} onChange={((event) => this.commentChangeHandler(event, post))}/>
                                         <FormHelperText className={post.commentRequired}>

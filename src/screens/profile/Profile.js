@@ -234,15 +234,15 @@ class Profile extends Component{
                                     </div>
                                     <hr/>
                                     <div className="post-body">
-                                        <Typography color="textPrimary" variant="headline" component="h4">
+                                        <Typography color="textPrimary" variant="h6">
                                             {this.state.post.caption.text}
                                         </Typography>
-                                        <Typography color="primary" variant="subtitle" component="p">
+                                        <Typography color="primary" variant="subtitle1">
                                             {this.state.post.tags}
                                         </Typography>
                                         <br/>
                                         {this.state.post.comments.map((comment) => (
-                                            <Typography color="textSecondary" variant="subtitle" component="p" key={this.state.post.id + "   " + comment} >
+                                            <Typography color="textSecondary" variant="subtitle1" key={this.state.post.id + "   " + comment} >
                                                 <span><b>{this.state.post.username}:</b> {comment}</span>
                                             </Typography>
                                         ))}
