@@ -17,10 +17,27 @@ class Header extends Component{
         }
     }
 
-    logoutClickHandler = () =>{
+    logoutClickHandler = () => {
         this.setState({ anchorEl: null});
         sessionStorage.clear();
         window.location = "http://localhost:3000/";
+    }
+
+    profileClickHandler = () => {
+        this.props.paths.history.push({
+            pathname: '/profile',
+            feed: this.props.posts
+        })
+    }
+
+    logoClickHandler = () => {
+        this.props.paths.history.push({
+            pathname: '/home'
+        })
+    }
+
+    searchChangeHandler = (event) => {
+        this.props.searchPostHandler(event.target.value);
     }
 
     render(){
@@ -33,10 +50,11 @@ class Header extends Component{
         const handleClose = () => {
             this.setState({ anchorEl: null});
         };
+
         return(
             <div>
                 <header className="app-header">
-                    <Typography className="logo" component="h6">
+                    <Typography className="logo" component="h6" onClick={this.logoClickHandler}>
                         Image Viewer
                     </Typography>
                         { this.props.loggedIn === "1" && 
@@ -49,11 +67,12 @@ class Header extends Component{
                                 className="inputInput"
                                 inputProps={{ 'aria-label': 'search' }}
                                 disableUnderline="true"
+                                onChange={(event) => this.searchChangeHandler(event)}
                             />
                         </div>
                         }
-                        { this.props.loggedIn === "1" && 
-                        <div className="profile">
+                        { ( this.props.loggedIn === "1" || this.props.profile === "1" )&& 
+                        <div className={ this.props.profile === "1" ? "profile-account" : "profile"}>
                             <IconButton aria-controls="menu-appbar" aria-haspopup="true" onClick={handleMenu}>
                                 <img className="avatar" src={this.state.profile_picture} alt="profile"/>
                             </IconButton>
@@ -72,7 +91,9 @@ class Header extends Component{
                                 open={open}
                                 onClose={handleClose}
                             >
-                                <MenuItem onClick={handleClose}>My Account</MenuItem>
+                                { this.props.loggedIn === "1" &&
+                                    <MenuItem onClick={this.profileClickHandler}>My Account</MenuItem>
+                                }
                                 <MenuItem onClick={this.logoutClickHandler}>Logout</MenuItem>
                             </Menu>
                         </div>

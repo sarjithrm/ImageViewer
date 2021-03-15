@@ -104,10 +104,10 @@ class Home extends Component{
         xhr.send(data);
     }
 
-    componentDidMount(){
+    componentWillMount(){
         if (sessionStorage.getItem("access-token") === null) {
             this.props.history.push({
-                pathname: '/'
+                pathname: '/profile'
             })
         }
 
@@ -170,7 +170,6 @@ class Home extends Component{
     addClickHandler = (event, post) =>{
         let feed                =   this.state.posts;
         let image               =   feed.indexOf(post);
-        console.log("Add :" + feed[image].currentComment);
         if(feed[image].currentComment === ""){
             feed[image].commentRequired =   "displayBlock";
             feed[image].currentComment  =   "";
@@ -182,13 +181,24 @@ class Home extends Component{
         this.setState({posts: feed});
     }
 
+    searchPostHandler = (caption) => {
+        let posts           = this.state.posts;
+        let searchFeed      = []
+        for(let post of posts){
+            if(post.caption.text.toLowerCase().includes(caption.toLowerCase())){
+                searchFeed.push(post);
+            }
+        }
+        this.setState({posts: searchFeed});
+    }
+
     render(){
 
         const { classes } = this.props;
 
         return(
             <div>
-                <Header loggedIn="1"/>
+                <Header loggedIn="1" profile="0" paths={this.props} posts={this.state.posts} searchPostHandler={this.searchPostHandler}/>
                 <div className="feed">
                     {this.state.posts.map((post) => (
                         <Card key={post.id} variant="outlined" className="posts">

@@ -10,6 +10,7 @@
     color: #fff;
     font-size: 18px;
     padding: 10px;
+    cursor: pointer;
     font-family:Courier New;
 }
 
@@ -47,4 +48,10 @@
   .profile{
       position: relative;
       padding: 10px;
+  }
+
+  .profile-account{
+    position: relative;
+    padding: 10px;
+    margin-left: auto;
   }
