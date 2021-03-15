@@ -33,7 +33,7 @@ class Login extends Component{
             usernameRequired: "displayNone",
             passwordRequired: "displayNone",
             userAndPass: "displayNone",
-            access_token: "IGQVJVWVQxTHdrbG1kUDZAZAaUQzVVJMcURZASlg0RDBaSXctQjdVMVpRRkhMaVl3cm8zTGxVbUg2VnVzRGtzNVg4RXZACUkZAMN2RaMkV4eU5IdkhFLWpIV3l6R0R4bmpZATWdHcV9weDZAkMEVEZAnkwcHhFazhIYWREenNHUE13",
+            access_token: "IGQVJYeXl4UFhGeGx6ZAWcxUkJEdUxSS1FrdGN5TjNLUExYN1p6Q2M4VkpZARWdJSzFpTEtRbXRtUFQ0MnFMZAUU0ak9Qa1ltTVI5dUNxVW9Rc3FLZAEVzSU1QMTdpVmV5bGlPQk4tUzRyTHZANM1BwTjhXUzR0SFdIemFWbEcw",
         }
     }
 
@@ -70,7 +70,7 @@ class Login extends Component{
         const { classes } = this.props;
         return(
             <div>
-                <Header loggedIn="0"/>
+                <Header loggedIn="0" profile="0" paths={this.props}/>
                 <div className="login">
                     <Card className={classes.root}>
                         <CardContent>

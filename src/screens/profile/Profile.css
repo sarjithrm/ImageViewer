@@ -1,0 +1,65 @@
+.account{
+    margin: 20px;
+    width: 80%;
+    left: 50%;
+    padding: 0px 8%;
+}
+
+.profile-info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-pic{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+.red{
+    color: red;
+}
+
+.displayNone{
+    display: none;
+}
+
+.displayBlock{
+    display: block;
+}
+
+.gridTile {
+    cursor: pointer;
+}
+
+.post-header{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.post-footer{
+    width: 50%;
+    bottom: 0;
+    position: absolute;
+    padding-bottom: 5px;
+    line-height: 0.8;
+}
+
+.post-comment{
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+}
+
+ul{
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+ul li{
+    padding-right: 100px;
+}
