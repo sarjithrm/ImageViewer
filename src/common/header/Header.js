@@ -68,7 +68,7 @@ class Header extends Component{
                                 placeholder="Search…"
                                 className="inputInput"
                                 inputProps={{ 'aria-label': 'search' }}
-                                disableUnderline="true"
+                                disableUnderline={true}
                                 onChange={(event) => this.searchChangeHandler(event)}
                             />
                         </div>

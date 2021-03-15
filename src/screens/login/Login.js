@@ -33,7 +33,7 @@ class Login extends Component{
             usernameRequired: "displayNone",
             passwordRequired: "displayNone",
             userAndPass: "displayNone",
-            access_token: "IGQVJVVWJfWDNoQ29oem1HODRKOWxsVFlhRHZAIa3ZAhcHRsaHFLcEs4QnJwR0xiNXVtZA3U4WlRXZA1Y5dWc1bUZA3eEJaN290M0xkSk1zQnE1VzBFTlVfNmZAqaG50WGRscmVDSDRnbU5kQ1pCNlVldGFZAWFUzS3dZAcVQzYzFr",
+            access_token: "IGQVJYUVJrd0ZAuS2NPMGtuSHJmODg4ZAHptSnJyVTc1bEJzeVc0LU9nYk1KR25wVTl6ZAkFCR0ZAwMGNUNFpSeExWSS16Xzg2dTZAvSGkyS1pETVpKN0psdW1wdjV5aG4tTkhEczZAlX0ZAucHQwOXd5Mm42VFRzWmxKeC1FeF9z",
         }
     }
 
@@ -75,12 +75,12 @@ class Login extends Component{
                     <Card className={classes.root}>
                         <CardContent>
                             <FormControl>
-                                <Typography variant="headline" component="h2">
+                                <Typography variant="h4">
                                     LOGIN
                                 </Typography>
                             </FormControl>
                             <br/><br/>
-                            <FormControl required fullWidth="true">
+                            <FormControl required fullWidth={true}>
                                 <InputLabel htmlFor="username"> Username </InputLabel>
                                 <Input id="username" type="text" username={this.state.username} onChange={this.usernameChangeHandler}/>
                                 <FormHelperText className={this.state.usernameRequired}>
@@ -88,7 +88,7 @@ class Login extends Component{
                                 </FormHelperText>
                             </FormControl>
                             <br/><br/>
-                            <FormControl required fullWidth="true">
+                            <FormControl required fullWidth={true}>
                                 <InputLabel htmlFor="password"> Password </InputLabel>
                                 <Input id="password" type="password" password={this.state.password} onChange={this.passwordChangeHandler}/>
                                 <FormHelperText className={this.state.passwordRequired}>
