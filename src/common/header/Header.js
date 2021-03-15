@@ -81,15 +81,10 @@ class Header extends Component{
                             <Menu
                                 id="menu-appbar"
                                 anchorEl={this.state.anchorEl}
-                                anchorOrigin={{
-                                    vertical: 'top',
-                                    horizontal: 'left',
-                                }}
                                 keepMounted
-                                transformOrigin={{
-                                vertical: 'bottom',
-                                horizontal: 'right',
-                                }}
+                                getContentAnchorEl={null}
+                                anchorOrigin={{vertical: 'bottom', horizontal: 'center'}}
+                                transformOrigin={{vertical: 'top', horizontal: 'center'}}
                                 open={open}
                                 onClose={handleClose}
                                 TransitionComponent={Fade}
