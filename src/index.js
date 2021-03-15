@@ -5,9 +5,7 @@ import Controller from './Controller';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <Controller />
-  </React.StrictMode>,
+    <Controller />,
   document.getElementById('root')
 );
 
