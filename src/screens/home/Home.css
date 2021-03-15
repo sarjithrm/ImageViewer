@@ -1,0 +1,36 @@
+.feed{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-content: center;
+    padding: 20px 50px;
+}
+
+.posts{
+    margin: 10px;
+}
+
+.post{
+    min-width: 250px;
+    max-width: 450px;
+}
+
+.like{
+    background-color: red;
+}
+
+.unlike{
+    background-color: inherit;
+}
+
+.red{
+    color: red;
+}
+
+.displayNone{
+    display: none;
+}
+
+.displayBlock{
+    display: block;
+}

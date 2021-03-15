@@ -9,7 +9,7 @@ import Input from '@material-ui/core/Input';
 import Button from '@material-ui/core/Button';
 import FormHelperText from '@material-ui/core/FormHelperText';
 import { withStyles } from '@material-ui/core/styles';
-import {Link} from 'react-router-dom';
+import Header from '../../common/header/Header';
 
 const styles = theme => ({
     root: {
@@ -32,7 +32,8 @@ class Login extends Component{
             password: "",
             usernameRequired: "displayNone",
             passwordRequired: "displayNone",
-            userAndPass: "displayNone"
+            userAndPass: "displayNone",
+            access_token: "IGQVJVWVQxTHdrbG1kUDZAZAaUQzVVJMcURZASlg0RDBaSXctQjdVMVpRRkhMaVl3cm8zTGxVbUg2VnVzRGtzNVg4RXZACUkZAMN2RaMkV4eU5IdkhFLWpIV3l6R0R4bmpZATWdHcV9weDZAkMEVEZAnkwcHhFazhIYWREenNHUE13",
         }
     }
 
@@ -50,11 +51,14 @@ class Login extends Component{
 
         let username = "admin";
         let password = "admin@123";
-        let access_token = "UpGrad1Test2AssigNmEnt";
+        let access_token = this.state.access_token;
 
         if( this.state.username === username && this.state.password === password){
             sessionStorage.setItem("access-token", access_token);
             this.setState({userAndPass: "displayNone"});
+            this.props.history.push({
+                pathname: '/home'
+            })
         }else{
             if( this.state.username !== "" && this.state.password !== "" ){
                 this.setState({userAndPass: "displayBlock"});
@@ -66,11 +70,7 @@ class Login extends Component{
         const { classes } = this.props;
         return(
             <div>
-                <header className="app-header">
-                    <Typography className="logo" variant="headline" component="h6">
-                        Image Viewer
-                    </Typography>
-                </header>
+                <Header loggedIn="0"/>
                 <div className="login">
                     <Card className={classes.root}>
                         <CardContent>
@@ -99,6 +99,7 @@ class Login extends Component{
                             <FormHelperText className={this.state.userAndPass}>
                                 <span className="red">Incorrect username and/or password</span>
                             </FormHelperText>
+                            <br/>
                             <Button variant="contained" color="primary" className={classes.loginBtn} onClick={this.loginClickHandler}>LOGIN</Button> 
                         </CardContent>
                     </Card>
