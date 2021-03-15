@@ -7,6 +7,8 @@ import SearchIcon from '@material-ui/icons/Search';
 import IconButton from '@material-ui/core/IconButton';
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
+import Fade from '@material-ui/core/Fade';
+import Divider from '@material-ui/core/Divider';
 
 class Header extends Component{
     constructor(){
@@ -79,20 +81,20 @@ class Header extends Component{
                             <Menu
                                 id="menu-appbar"
                                 anchorEl={this.state.anchorEl}
-                                anchorOrigin={{
-                                    vertical: 'top',
-                                    horizontal: 'left',
-                                }}
                                 keepMounted
-                                transformOrigin={{
-                                vertical: 'top',
-                                horizontal: 'left',
-                                }}
+                                getContentAnchorEl={null}
+                                anchorOrigin={{vertical: 'bottom', horizontal: 'center'}}
+                                transformOrigin={{vertical: 'top', horizontal: 'center'}}
                                 open={open}
                                 onClose={handleClose}
+                                TransitionComponent={Fade}
+                                variant="menu"
                             >
                                 { this.props.loggedIn === "1" &&
                                     <MenuItem onClick={this.profileClickHandler}>My Account</MenuItem>
+                                }
+                                { this.props.loggedIn === "1" &&
+                                    <Divider variant="middle"/>
                                 }
                                 <MenuItem onClick={this.logoutClickHandler}>Logout</MenuItem>
                             </Menu>

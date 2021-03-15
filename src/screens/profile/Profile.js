@@ -137,49 +137,33 @@ class Profile extends Component{
 
     likeClickHandler = () =>{
         let feed                =   this.state.post;
-        let allPosts            =   this.state.posts;
-        let image               =   allPosts.indexOf(feed);
         if(feed.likes.liked === false){
             feed.likes.count                =   feed.likes.count + 1;
-            allPosts[image].likes.count     =   allPosts[image].likes.count + 1
             feed.likes.liked                =   true;
-            allPosts[image].likes.liked     =   true;
         }else{
             feed.likes.count                =   feed.likes.count - 1;
-            allPosts[image].likes.count     =   allPosts[image].likes.count - 1
             feed.likes.liked                =   false;
-            allPosts[image].likes.liked     =   false;
         }
-        this.setState({post: feed, posts: allPosts});
+        this.setState({post: feed});
     }
 
     commentChangeHandler = (event) =>{
         let post                    =   this.state.post;
-        let feed                    =   this.state.posts;
-        let image                   =   feed.indexOf(post);
-        feed[image].currentComment  =   event.target.value;
         post.currentComment         =   event.target.value;
-        this.setState({posts: feed, post: post});
+        this.setState({post: post});
     }
 
     addClickHandler = () =>{
         let post                =   this.state.post;
-        let feed                =   this.state.posts;
-        let image               =   feed.indexOf(post);
         if(post.currentComment === ""){
-            feed[image].commentRequired =   "displayBlock";
-            feed[image].currentComment  =   "";
             post.commentRequired        =   "displayBlock";
             post.currentComment         =   "";
         }else{
-            feed[image].commentRequired =   "displayNone";
             post.commentRequired        =   "displayNone";
-            feed[image].comments.push(feed[image].currentComment);
             post.comments.push(post.currentComment);
-            feed[image].currentComment  =   "";
             post.currentComment         =   "";
         }
-        this.setState({posts: feed, post: post});
+        this.setState({post: post});
     }
 
     render(){

@@ -95,6 +95,7 @@ class Home extends Component{
                 postDetails["comments"]     =   [];
                 postDetails["currentComment"]   =   "";
                 postDetails["commentRequired"]  =   "displayNone";
+                postDetails["search"]           =   true;
                 feed.push(postDetails);
             }
             that.setState({posts: feed});
@@ -135,6 +136,7 @@ class Home extends Component{
                         postDetails["comments"]     =   [];
                         postDetails["currentComment"]   =   "";
                         postDetails["commentRequired"]  =   "displayNone";
+                        postDetails["search"]           =   true;
                         feed.push(postDetails);
                     }
                 }
@@ -186,8 +188,11 @@ class Home extends Component{
         let searchFeed      = []
         for(let post of posts){
             if(post.caption.text.toLowerCase().includes(caption.toLowerCase())){
-                searchFeed.push(post);
+                post.search = true;
+            }else{
+                post.search = false;
             }
+            searchFeed.push(post);
         }
         this.setState({posts: searchFeed});
     }
@@ -200,7 +205,7 @@ class Home extends Component{
             <div>
                 <Header loggedIn="1" profile="0" paths={this.props} posts={this.state.posts} searchPostHandler={this.searchPostHandler}/>
                 <div className="feed">
-                    {this.state.posts.map((post) => (
+                    {this.state.posts.filter(image => image.search === true).map((post) => (
                         <Card key={post.id} variant="outlined" className="posts">
                             <CardHeader 
                                 avatar={

@@ -33,7 +33,7 @@ class Login extends Component{
             usernameRequired: "displayNone",
             passwordRequired: "displayNone",
             userAndPass: "displayNone",
-            access_token: "IGQVJYeXl4UFhGeGx6ZAWcxUkJEdUxSS1FrdGN5TjNLUExYN1p6Q2M4VkpZARWdJSzFpTEtRbXRtUFQ0MnFMZAUU0ak9Qa1ltTVI5dUNxVW9Rc3FLZAEVzSU1QMTdpVmV5bGlPQk4tUzRyTHZANM1BwTjhXUzR0SFdIemFWbEcw",
+            access_token: "IGQVJVVWJfWDNoQ29oem1HODRKOWxsVFlhRHZAIa3ZAhcHRsaHFLcEs4QnJwR0xiNXVtZA3U4WlRXZA1Y5dWc1bUZA3eEJaN290M0xkSk1zQnE1VzBFTlVfNmZAqaG50WGRscmVDSDRnbU5kQ1pCNlVldGFZAWFUzS3dZAcVQzYzFr",
         }
     }
 
